@@ -46,7 +46,8 @@ public final class WarpMenu implements InventoryHolder {
             inventory.setItem(i, warpItem(plugin, warps.get(start + i), admin));
         }
 
-        ItemStack filler = item(Material.GRAY_STAINED_GLASS_PANE, Component.empty(), List.of());
+        ItemStack filler = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+        filler.editMeta(meta -> meta.setHideTooltip(true));
         for (int slot = PAGE_SIZE; slot < 54; slot++) inventory.setItem(slot, filler);
         if (this.page > 0) {
             inventory.setItem(SLOT_PREVIOUS, item(Material.ARROW, msg.item("menu.previous-page", "Previous page"), List.of()));
