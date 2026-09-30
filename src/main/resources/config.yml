@@ -1,0 +1,51 @@
+# WarpMenu configuration
+# All text uses MiniMessage formatting: https://docs.advntr.dev/minimessage/format.html
+
+# Seconds to wait before teleporting. Moving to another block cancels it. 0 = instant.
+teleport-delay: 3
+
+# Seconds a player must wait between warps. 0 = no cooldown.
+cooldown: 5
+
+# When true, players need warpmenu.warp.<name> (or warpmenu.warp.*) to see and use a warp.
+per-warp-permissions: false
+
+# Icon used when /setwarp is run with an empty hand.
+default-icon: ENDER_PEARL
+
+menu:
+  title: '<dark_gray>Warps <gray>(<page>/<pages>)'
+  warp-name: '<aqua><bold><warp>'
+  warp-lore:
+    - '<gray>World: <white><world>'
+    - '<gray>Location: <white><x>, <y>, <z>'
+    - ''
+    - '<yellow>Click to teleport'
+  admin-lore: '<red>Shift + right-click to delete'
+  admin-icon-lore: '<gold>Drop an item here to change the icon'
+  previous-page: '<yellow>Previous page'
+  next-page: '<yellow>Next page'
+  close: '<red>Close'
+
+messages:
+  prefix: '<dark_gray>[<aqua>Warps<dark_gray>] '
+  no-permission: '<red>You do not have permission to do that.'
+  players-only: '<red>Only players can use this command.'
+  unknown-warp: '<red>There is no warp called <white><warp></white>.'
+  invalid-name: '<red>Warp names can only use letters, numbers, - and _ (max 32).'
+  world-missing: '<red>The world for warp <white><warp></white> is not loaded.'
+  warp-set: '<green>Warp <white><warp></white> created.'
+  warp-moved: '<green>Warp <white><warp></white> moved to your location.'
+  warp-deleted: '<green>Warp <white><warp></white> deleted.'
+  teleport-pending: '<gray>Teleporting to <white><warp></white> in <white><seconds></white>s. Don''t move!'
+  already-teleporting: '<gray>You''re already teleporting to <white><warp></white>.'
+  teleport-cancelled: '<red>Teleport cancelled because you moved.'
+  teleported: '<green>Warped to <white><warp></white>.'
+  cooldown: '<red>Wait <white><seconds></white>s before warping again.'
+  no-warps: '<gray>There are no warps yet.'
+  reloaded: '<green>Config and warps reloaded.'
+  usage-setwarp: '<red>Usage: /setwarp \<name> [icon]'
+  unknown-icon: '<red><white><icon></white> is not an item.'
+  icon-changed: '<green>Icon for <white><warp></white> changed.'
+  usage-delwarp: '<red>Usage: /delwarp \<name>'
+  usage-admin: '<red>Usage: /warpmenu reload'

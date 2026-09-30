@@ -1,0 +1,38 @@
+name: WarpMenu
+version: '${version}'
+main: dev.kindling.warpmenu.WarpMenuPlugin
+api-version: '1.21'
+description: Server warps with a clickable, paginated menu.
+author: Kindling Dev
+
+commands:
+  warp:
+    description: Open the warp menu, or teleport to a warp.
+    usage: /warp [name]
+    aliases: [warps]
+  setwarp:
+    description: Create or move a warp at your location (uses your held item as the icon).
+    usage: /setwarp <name> [icon]
+  delwarp:
+    description: Delete a warp.
+    usage: /delwarp <name>
+  warpmenu:
+    description: WarpMenu admin commands.
+    usage: /warpmenu reload
+
+permissions:
+  warpmenu.use:
+    description: Open the menu and use warps.
+    default: true
+  warpmenu.admin:
+    description: Create, delete and reload warps.
+    default: op
+  warpmenu.warp.*:
+    description: Access every warp when per-warp-permissions is enabled.
+    default: op
+  warpmenu.bypass.delay:
+    description: Teleport instantly.
+    default: op
+  warpmenu.bypass.cooldown:
+    description: Ignore the teleport cooldown.
+    default: op
