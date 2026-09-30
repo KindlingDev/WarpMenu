@@ -1,5 +1,6 @@
 package dev.kindling.warpmenu;
 
+import com.google.common.collect.ImmutableMultimap;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.Bukkit;
@@ -7,6 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -96,6 +98,10 @@ public final class WarpMenu implements InventoryHolder {
         ItemMeta meta = stack.getItemMeta();
         meta.displayName(name);
         meta.lore(lore);
+        // Hide vanilla stats like "When in Main Hand: 7 Attack Damage" on tool and weapon icons.
+        // Default modifiers only hide once an explicit (empty) set is present.
+        meta.setAttributeModifiers(ImmutableMultimap.of());
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         stack.setItemMeta(meta);
         return stack;
     }
