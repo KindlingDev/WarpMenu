@@ -58,3 +58,7 @@ Requires JDK 21+.
 ./gradlew build      # jar in build/libs/
 ./gradlew deploy -PserverDir=<server folder>   # build and copy into <server>/plugins
 ```
+
+## License
+
+[MIT](LICENSE) © 2026 Kindling Dev
