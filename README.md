@@ -4,7 +4,7 @@
 
 Server warps with a clean, clickable menu. Lightweight, no dependencies, fully configurable.
 
-**Supports:** Paper 1.21.4 – 26.x (and forks like Purpur)
+**Supports:** Paper 1.21.4 – 26.2 (and forks like Purpur)
 
 ## Features
 
